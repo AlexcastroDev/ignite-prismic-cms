@@ -1,9 +1,6 @@
 import { GetStaticProps } from 'next'
-
 import { getPrismicClient } from '../services/prismic'
-
-import commonStyles from '../styles/common.module.scss'
-import styles from './home.module.scss'
+import { HomeContainer, PostItem } from './Home.styles'
 
 interface Post {
   uid?: string
@@ -24,13 +21,22 @@ interface HomeProps {
   postsPagination: PostPagination
 }
 
-export default function Home() {
-  return <div />
+export default function Home(props: HomeProps) {
+  console.log(props)
+  return (
+    <HomeContainer>
+      <div />
+    </HomeContainer>
+  )
 }
 
-// export const getStaticProps = async () => {
-//   // const prismic = getPrismicClient({});
-//   // const postsResponse = await prismic.getByType(TODO);
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient({})
+  const postsResponse = await prismic.getByType('homepage')
 
-//   // TODO
-// };
+  return {
+    props: {
+      postsResponse,
+    },
+  }
+}

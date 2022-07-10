@@ -1,0 +1,9 @@
+{
+  "id": "postitem",
+  "label": "postItem",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}

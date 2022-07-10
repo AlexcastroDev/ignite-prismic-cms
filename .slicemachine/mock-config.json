@@ -1,0 +1,27 @@
+{
+  "_cts": {
+    "postitem": {},
+    "homepage": {}
+  },
+  "slices": {
+    "PostItem": {
+      "default": {
+        "primary": {},
+        "items": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "fullContent": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
