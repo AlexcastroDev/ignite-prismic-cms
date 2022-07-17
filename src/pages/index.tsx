@@ -1,6 +1,8 @@
 import { GetStaticProps } from 'next'
+import Header from '../components/Header'
 import { getPrismicClient } from '../services/prismic'
-import { HomeContainer, PostItem } from './Home.styles'
+import { HomeContainer } from './Home.styles'
+import { PostItem } from '../../slices'
 
 interface Post {
   uid?: string
@@ -22,11 +24,14 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  console.log(props)
+  const { postsResponse } = props
   return (
-    <HomeContainer>
-      <div />
-    </HomeContainer>
+    <>
+      <Header />
+      <HomeContainer>
+        <div />
+      </HomeContainer>
+    </>
   )
 }
 
